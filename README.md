@@ -2,5 +2,6 @@
 
 A new Flutter project.
 
-This project is a valorant info app about the agents, maps, weapons used in the game.
+This project is a mobile application build with flutter having information about a fps game, it's agents, maps, weapons, skins, bundle, etc...
 I am still working on the app.
+
