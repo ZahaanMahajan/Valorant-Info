@@ -1,16 +1,7 @@
-# valorant
+# Valorant Info
 
 A new Flutter project.
 
-## Getting Started
+This project is a mobile application build with flutter having information about a fps game, it's agents, maps, weapons, skins, bundle, etc...
+I am still working on the app.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
