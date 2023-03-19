@@ -5,8 +5,21 @@ import '../bundle_screen/bundle_screen.dart';
 import '../maps_screen/maps_screen.dart';
 import '../weapons_screen/weapons_screen.dart';
 
-class DashBoardScreen extends StatelessWidget {
+class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
+
+  @override
+  State<DashBoardScreen> createState() => _DashBoardScreenState();
+}
+
+class _DashBoardScreenState extends State<DashBoardScreen> {
+  bool animate = false;
+  @override
+  void initState() {
+    setState(() => animate = false);
+    _startAnimation();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,37 +47,46 @@ class DashBoardScreen extends StatelessWidget {
         const BundleScreen(),
       ],
     ];
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "DashBoard",
+    return AnimatedOpacity(
+      opacity: animate ? 1 : 0,
+      duration: const Duration(milliseconds: 3000),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "DashBoard",
+          ),
         ),
-      ),
-      body: SafeArea(
-        child: ListView.builder(
-          itemCount: dashBoard.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 12,
-              ),
-              child: ToPageTile(
-                toPageText: dashBoard[index][0],
-                imagePath: dashBoard[index][1],
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => dashBoard[index][2],
-                  ),
+        body: SafeArea(
+          child: ListView.builder(
+            itemCount: dashBoard.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 12,
                 ),
-                color: isDarkMode ? kPrimaryColor : kSecondaryColor,
-              ),
-            );
-          },
+                child: ToPageTile(
+                  toPageText: dashBoard[index][0],
+                  imagePath: dashBoard[index][1],
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => dashBoard[index][2],
+                    ),
+                  ),
+                  color: isDarkMode ? kPrimaryColor : kSecondaryColor,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
+  }
+
+  Future _startAnimation() async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    setState(() => animate = true);
   }
 }
 

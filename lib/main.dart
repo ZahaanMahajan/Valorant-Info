@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:valorant/screens/dashboard_screen/dashboard_screen.dart';
+import 'package:valorant/screens/splash_screen/splash_screen.dart';
 import 'package:valorant/theme.dart';
 
 void main() {
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-      home: const DashBoardScreen(),
+      themeMode: ThemeMode.dark,
+      home: const SplashScreen(),
     );
   }
 }
