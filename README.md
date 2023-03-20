@@ -5,8 +5,8 @@ A new Flutter project.
 This project is a mobile application build with flutter having information about a fps game,
 it's agents, maps, weapons, skins, bundle, etc...
 
+Code is not at all optimised, no state management, no route management, no even folder management.
 I am still working on the app.
-
 
 # Here are some example screenshots from the app:
 
